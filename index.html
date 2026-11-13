@@ -18,6 +18,7 @@
             line-height: 1.6;
             min-height: 100vh;
             padding: 20px;
+            padding-top: 74px; /* offset for fixed navbar */
         }
 
         .container {
@@ -31,8 +32,10 @@
 
         /* Navbar Styles */
         .navbar-wrapper {
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
             z-index: 1000;
         }
 
@@ -40,6 +43,8 @@
             background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
             position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .navbar-inner {
@@ -695,30 +700,30 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Navbar -->
-        <div class="navbar-wrapper">
-            <nav class="navbar">
-                <div class="navbar-inner">
-                    <span class="navbar-brand">Dr. Saddam Hussain</span>
-                    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-                        <span></span><span></span><span></span>
-                    </button>
-                </div>
-                <ul id="nav-menu">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#expertise">Expertise</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#memberships">Memberships</a></li>
-                    <li><a href="#books">Books</a></li>
-                    <li><a href="#publications">Publications</a></li>
-                    <li><a href="#certifications">Certifications</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+    <!-- Navbar — outside .container so sticky works -->
+    <div class="navbar-wrapper">
+        <nav class="navbar">
+            <div class="navbar-inner">
+                <span class="navbar-brand">Dr. Saddam Hussain</span>
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+            <ul id="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#memberships">Memberships</a></li>
+                <li><a href="#books">Books</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
 
+    <div class="container">
         <!-- Header Section -->
         <div class="header" id="about">
             <div class="hero-content">
